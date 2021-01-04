@@ -1,5 +1,3 @@
-// Assignment code here
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -31,6 +29,7 @@ function writePassword() {
   }
 }
 
+//password function section
 function generatePassword(passwordLength, upperCheck, lowerCheck, numericCheck, specialCheck) {
   var upperCasePassword = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerCasePassword = "abcdefghijklmnopqrstuvwxyz";
