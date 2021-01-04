@@ -31,18 +31,38 @@ function writePassword() {
   }
 }
 
-function generatePassword(passwordLengthPrompt, upperCaseCheck, lowerCaseCheck, numericCaseCheck, specialCharactersCheck) {
+function generatePassword(passwordLength, upperCheck, lowerCheck, numericCheck, specialCheck) {
   var upperCasePassword = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerCasePassword = "abcdefghijklmnopqrstuvwxyz";
-  var numericCaseCPassword = "0123456789";
+  var numericCasePassword = "0123456789";
   var specialCharactersPassword = "#$!@!$^&";
   let password = "";
 
 
-  
+  for (let i = 0; i < passwordLength; i++)
+  {
+  let randomNumber = Math.floor(Math.random() * 4 + 1) 
+  if (randomNumber === 1 && upperCheck)
+  {
+    password += upperCasePassword[Math.floor(Math.random() * upperCasePassword.length)]
+  } 
+  if (randomNumber === 2 && lowerCheck){ 
+  password += lowerCasePassword[Math.floor(Math.random() * lowerCasePassword.length)]
+  }
+  if (randomNumber === 3 && numericCheck){
+    password += numericCasePassword[Math.floor(Math.random() * numericCasePassword.length)]
+  }
+  if (randomNumber === 4 && specialCheck)
+  {
+    password += specialCharactersPassword[Math.floor(Math.random() * specialCharactersPassword.length)]
+  }
+  console.log(password)
 }
+  window.alert("Password is " + password);
+  return password;
 
 
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
